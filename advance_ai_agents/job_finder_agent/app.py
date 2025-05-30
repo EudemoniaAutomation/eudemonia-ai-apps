@@ -1,9 +1,10 @@
-import streamlit as st
 import asyncio
-import os
-import logging
-import nest_asyncio
 import base64
+import logging
+import os
+
+import streamlit as st
+import nest_asyncio
 from dotenv import load_dotenv
 from job_agents import run_analysis
 from mcp_server import wait_for_initialization, get_mcp_server
@@ -26,16 +27,20 @@ if 'analysis_result' not in st.session_state:
 if 'is_analyzing' not in st.session_state:
     st.session_state.is_analyzing = False
 
+
 async def analyze_profile(linkedin_url: str, api_key: str):
     """
     Analyze a LinkedIn profile using the provided API key.
-    
+
     Args:
         linkedin_url (str): The LinkedIn profile URL to analyze
         api_key (str): The API key for authentication with the analysis service
     """
-    try:
+    # Store original value to restore later (if exists)
+    original_api_key = os.environ.get('NEBIUS_API_KEY')
 
+    try:
+        # Set the API key as environment variable for the analysis
         os.environ['NEBIUS_API_KEY'] = api_key
 
         if not await wait_for_initialization():
@@ -48,7 +53,13 @@ async def analyze_profile(linkedin_url: str, api_key: str):
         logger.error("Error analyzing LinkedIn profile: %s", str(e))
         st.error(f"Error analyzing LinkedIn profile: {str(e)}")
     finally:
+        # Clean up: restore original API key or remove if it didn't exist
+        if original_api_key is not None:
+            os.environ['NEBIUS_API_KEY'] = original_api_key
+        else:
+            os.environ.pop('NEBIUS_API_KEY', None)
         st.session_state.is_analyzing = False
+
 
 def main():
     """Main function to run the Streamlit job finder agent application."""
@@ -75,7 +86,8 @@ def main():
         st.divider()
 
         st.subheader("Enter LinkedIn Profile URL")
-        linkedin_url = st.text_input("LinkedIn URL", placeholder="https://www.linkedin.com/in/username/")
+        linkedin_url = st.text_input(
+            "LinkedIn URL", placeholder="https://www.linkedin.com/in/username/")
 
         if st.button("Analyze Profile", type="primary", disabled=st.session_state.is_analyzing):
             if not linkedin_url:
@@ -105,6 +117,7 @@ def main():
         st.markdown("---")
         with st.spinner("Analyzing profile... This may take a few minutes."):
             st.empty()
+
 
 if __name__ == "__main__":
     main()
