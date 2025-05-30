@@ -49,9 +49,12 @@ async def analyze_profile(linkedin_url: str, api_key: str):
 
         result = await run_analysis(get_mcp_server(), linkedin_url)
         st.session_state.analysis_result = result
-    except Exception as e:
+    except (ConnectionError, TimeoutError, ValueError) as e:
         logger.error("Error analyzing LinkedIn profile: %s", str(e))
         st.error(f"Error analyzing LinkedIn profile: {str(e)}")
+    except Exception as e:
+        logger.error("Unexpected error analyzing LinkedIn profile: %s", str(e))
+        st.error("An unexpected error occurred during analysis. Please try again.")
     finally:
         # Clean up: restore original API key or remove if it didn't exist
         if original_api_key is not None:
@@ -87,7 +90,9 @@ def main():
 
         st.subheader("Enter LinkedIn Profile URL")
         linkedin_url = st.text_input(
-            "LinkedIn URL", placeholder="https://www.linkedin.com/in/username/")
+            "LinkedIn URL",
+            placeholder="https://www.linkedin.com/in/username/"
+        )
 
         if st.button("Analyze Profile", type="primary", disabled=st.session_state.is_analyzing):
             if not linkedin_url:
