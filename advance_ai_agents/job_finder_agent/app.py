@@ -26,8 +26,11 @@ if 'analysis_result' not in st.session_state:
 if 'is_analyzing' not in st.session_state:
     st.session_state.is_analyzing = False
 
-async def analyze_profile(linkedin_url: str):
+async def analyze_profile(linkedin_url: str, api_key: str):
     try:
+        # Set the API key as environment variable for the analysis
+        os.environ['NEBIUS_API_KEY'] = api_key
+        
         if not await wait_for_initialization():
             st.error("Failed to initialize MCP server")
             return
@@ -80,7 +83,7 @@ def main():
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
             try:
-                loop.run_until_complete(analyze_profile(linkedin_url))
+                loop.run_until_complete(analyze_profile(linkedin_url, api_key))
             finally:
                 loop.close()
 
