@@ -95,10 +95,10 @@ class AIAppsManager:
         steps = [
             ("Creating directory structure", self._create_directory_structure),
             ("Discovering applications", self._discover_applications),
-            ("Setting up CI/CD templates", self._setup_cicd_templates),
-            ("Installing monitoring", self._setup_monitoring),
-            ("Configuring task management", self._setup_task_management),
-            ("Running initial health check", self._initial_health_check)
+            #("Setting up CI/CD templates", self._setup_cicd_templates),
+            #("Installing monitoring", self._setup_monitoring),
+            #("Configuring task management", self._setup_task_management),
+            #("Running initial health check", self._initial_health_check)
         ]
 
         for step_name, step_func in steps:
@@ -779,6 +779,13 @@ class HealthMonitor:
 # =============================================================================
 
 import click
+from functools import wraps
+
+def coro(f):
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        return asyncio.run(f(*args, **kwargs))
+    return wrapper
 
 @click.group()
 def cli():
@@ -787,6 +794,7 @@ def cli():
 
 @cli.command()
 @click.option('--repo-path', default='.', help='Path to repository')
+@coro
 async def initialize(repo_path):
     """Initialize the repository with enhanced capabilities"""
     manager = AIAppsManager(Path(repo_path))
@@ -795,6 +803,7 @@ async def initialize(repo_path):
 
 @cli.command()
 @click.option('--app-path', required=True, help='Path to application')
+@coro
 async def test_app(app_path):
     """Run comprehensive tests for an application"""
     tester = AIAppTester(Path(app_path))
@@ -815,6 +824,7 @@ async def test_app(app_path):
 
 @cli.command()
 @click.option('--config-file', default='monitoring_config.json', help='Monitoring configuration file')
+@coro
 async def monitor(config_file):
     """Start health monitoring"""
     with open(config_file) as f:
@@ -845,6 +855,7 @@ async def monitor(config_file):
 @click.option('--environment', default='staging', help='Deployment environment')
 @click.option('--github-token', envvar='GITHUB_TOKEN', help='GitHub token')
 @click.option('--slack-token', envvar='SLACK_TOKEN', help='Slack token')
+@coro
 async def create_followup_tasks(app_name, deployment_id, environment, github_token, slack_token):
     """Create follow-up tasks for deployment"""
     integrator = TaskManagementIntegrator(github_token, slack_token)
