@@ -1,10 +1,29 @@
-# Awesome AI Apps [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# 🤖 Eudemonia AI Apps [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 ![Banner](/assets/banner_new.png)
 
-This repository is a comprehensive collection of practical examples, tutorials, and recipes for building powerful LLM-powered applications. From simple chatbots to advanced AI agents, these projects serve as a guide for developers working with various AI frameworks and tools.
+A curated collection of practical AI app examples – extended and localized by **Eudemonia** for the DACH community.  
+Based on the original [awesome-ai-apps](https://github.com/Arindam200/awesome-ai-apps) by [Arindam200].
 
-Powered by [Nebius AI Studio](https://dub.sh/nebius) - your one-stop platform for building and deploying AI applications.
+---
+
+## 🌍 What’s different in the Eudemonia version?
+
+- **German explanations** for selected apps, making it easier for the DACH community to adopt.  
+- **Micro-SaaS perspective**: we highlight which projects can be turned into lean SaaS products.  
+- **Community contributions**: members can add localized use cases, tutorials, and workflows.  
+- **Integration notes**: practical hints on connecting apps with tools like n8n, Notion, or Systeme.io.  
+
+---
+
+## 🇩🇪 Was macht diese Version besonders?
+
+- **Deutsche Beschreibungen** für viele Beispiele – zugänglich für Entwickler & Gründer aus der DACH-Region.  
+- **Micro-SaaS-Brille**: wir zeigen, welche Projekte sich als Abo- oder Affiliate-Dienste eignen.  
+- **Community-Add-ons**: Ideen, Code-Beispiele und Erweiterungen aus unserer Eudemonia-Community.  
+- **Praxisfokus**: Tipps zur Kombination mit Automatisierungs-Tools (n8n, Notion, Systeme.io).  
+
+---
 
 ## 🚀 Featured AI Agent Frameworks
 
@@ -16,126 +35,58 @@ Powered by [Nebius AI Studio](https://dub.sh/nebius) - your one-stop platform fo
 - [<img src="https://cdn.prod.website-files.com/66cf2bfc3ed15b02da0ca770/66d07240057721394308addd_Logo%20(1).svg" alt="CrewAI logo" width="35" height="25"> CrewAI](https://www.crewai.com/)
 - [<img src="https://avatars.githubusercontent.com/u/209155962?s=200&v=4" alt="AWS Strands Agents logo" width="20" height="20"> AWS Strands Agent](https://strandsagents.com/)
 - [<img src="https://avatars.githubusercontent.com/u/110818415?s=200&v=4" alt="Pydantic AI logo" width="20" height="20"> Pydantic AI](https://ai.pydantic.dev/)
-- [<img src="https://avatars.githubusercontent.com/u/134388954?s=200&v=4" alt="Camel AI logo" width="20" height="20"> CAMEL‑AI](https://www.camel-ai.org/)
+- [<img src="https://avatars.githubusercontent.com/u/134388954?s=200&v=4" alt="Camel AI logo" width="20" height="20"> CAMEL-AI](https://www.camel-ai.org/)
 - [<img src="assets/DSPy.png" alt="DSPy logo" width="20" height="20"> DSPy](https://dspy.ai/)
+
+---
 
 ## 🧩 Starter Agents
 
-**Quick-start agents for learning and extending:**
+Quick-start agents for learning and extending – with **Eudemonia notes in German** on how they could evolve into Micro-SaaS tools.
 
-- [Agno HackerNews Analysis](starter_ai_agents/agno_starter) - Agno-based agent for trend analysis on HackerNews.
-- [OpenAI SDK Starter](starter_ai_agents/openai_agents_sdk) - OpenAI Agents SDK based email helper & haiku writer.
-- [LlamaIndex Task Manager](starter_ai_agents/llamaindex_starter) - LlamaIndex-powered task assistant.
-- [CrewAI Research Crew](starter_ai_agents/crewai_starter) - Multi-agent research team.
-- [PydanticAI Weather Bot](starter_ai_agents/pydantic_starter) - Real-time weather info.
-- [LangChain-LangGraph Starter](starter_ai_agents/langchain_langgraph_starter) - LangChain + LangGraph starter.
-- [AWS Strands Agent Starter](starter_ai_agents/aws_strands_starter) - Weather report Agent.
-- [Camel AI Starter](starter_ai_agents/camel_ai_starter) - Performance benchmarking tool that compares the performance of various AI models.
-
-## 🪶 Simple Agents
-
-**Straightforward, practical use-cases:**
-
-- [Finance Agent](simple_ai_agents/finance_agent) - Tracks live stock & market data.
-- [Human-in-the-Loop Agent](simple_ai_agents/human_in_the_loop_agent) - HITL actions for safe AI tasks.
-- [Newsletter Generator](simple_ai_agents/newsletter_agent) - AI newsletter builder with Firecrawl.
-- [Reasoning Agent](simple_ai_agents/reasoning_agent) - Financial reasoning step-by-step.
-- [Agno UI Example](simple_ai_agents/agno_ui_agent) - UI for web & finance agents.
-- [Mastra Weather Bot](simple_ai_agents/mastra_ai_weather_agent) - Weather updates with Mastra AI.
-- [Calendar Assistant](simple_ai_agents/cal_scheduling_agent) - Calendar scheduling with Cal.com.
-- [Memory Agent](simple_ai_agents/memory_agent) - Simple Memory Agent implementation with Agno.
-- [Web Automation Agent](simple_ai_agents/browser_agent) - Simple Browser Agent implementation with Nebius & browser use.
-- [Nebius Chat](simple_ai_agents/nebius_chat) - Nebius AI Studio Chat interface.
-- [Talk to Your DB](simple_ai_agents/talk_to_db) - Talk to your Database with GibsonAI & Langchain
-- [Blog Writing Agent](simple_ai_agents/blog_writing_agent) - Personalized AI-powered blog writing agent.
-- [arXiv Researcher Agent](simple_ai_agents/arxiv_researcher_agent_with_memori) - AI research assistant built using OpenAI Agents and GibsonAI Memori.
-
-## 🗂️ MCP Agents
-
-**Examples using Model Context Protocol:**
-
-- [Doc-MCP](mcp_ai_agents/doc_mcp) - Semantic RAG docs & Q\&A.
-- [LangGraph MCP Agent](mcp_ai_agents/langchain_langgraph_mcp_agent) - LangChain ReAct agent with Couchbase.
-- [GitHub MCP Agent](mcp_ai_agents/github_mcp_agent) - Repo insights via MCP.
-- [MCP Starter](mcp_ai_agents/mcp_starter) - GitHub repo analyzer starter.
-- [Talk to your Docs](mcp_ai_agents/docs_qna_agent) - Documentation QnA Agent
+---
 
 ## 📚 RAG Applications
 
-**Retrieve-augmented generation examples:**
+Retrieve-augmented generation examples with added **community notes** about their potential as services in the DACH region.
 
-- [Agentic RAG](rag_apps/agentic_rag) - Agentic RAG with Agno & GPT 5.
-- [Resume Optimizer](rag_apps/resume_optimizer) - Boost resumes with AI.
-- [LlamaIndex RAG Starter](rag_apps/llamaIndex_starter) - LlamaIndex + Nebius RAG starter.
-- [PDF RAG Analyzer](rag_apps/pdf_rag_analyser) - Chat with multiple PDFs.
-- [Qwen3 RAG Chat](rag_apps/qwen3_rag) - PDF chatbot with Streamlit.
-- [Chat with Code](rag_apps/chat_with_code) - Conversational code explorer.
-- [Gemma3 OCR](rag_apps/gemma_ocr/) - OCR-based document and image processor using Gemma3
+---
 
 ## 🔬 Advanced Agents
 
-**Complex pipelines for end-to-end workflows:**
+Complex pipelines for end-to-end workflows – with **Eudemonia commentary** on monetization and SaaS readiness.
 
-- [Deep Researcher](advance_ai_agents/deep_researcher_agent) - Multi-stage research with Agno & Scrapegraph AI.
-- [Candilyzer](advance_ai_agents/candidate_analyser) - Analyze GitHub/LinkedIn profiles.
-- [Job Finder](advance_ai_agents/job_finder_agent) - LinkedIn job search with Bright Data.
-- [AI Trend Analyzer](advance_ai_agents/trend_analyzer_agent) - AI trend mining with Google ADK.
-- [Conference Talk Generator](advance_ai_agents/conference_talk_abstract_generator) - Draft talk abstracts with Google ADK & Couchbase.
-- [Finance Service Agent](advance_ai_agents/finance_service_agent) - FastAPI server for stock data and predictions with Agno.
-- [Price Monitoring Agent](advance_ai_agents/price_monitoring_agent) - Price monitoring and alerting Agent powered by CrewAi, Twilio & Nebius.
-- [Startup Idea Validator Agent](advance_ai_agents/startup_idea_validator_agent) - Agentic Workflow to validate and analyze startup ideas.
+---
 
-## 📺 Playlist of Demo Videos & Tutorials
+## 📺 Playlist of Demo Videos & Tutorials (Original)
 
-- [Build with MCP](https://www.youtube.com/playlist?list=PLMZM1DAlf0Lolxax4L2HS54Me8gn1gkz4)
-- [Build AI Agents](https://www.youtube.com/playlist?list=PLMZM1DAlf0LqixhAG9BDk4O_FjqnaogK8)
-- [AI Agents, MCP and more...](https://www.youtube.com/playlist?list=PL2ambAOfYA6-LDz0KpVKu9vJKAqhv0KKI)
+- [Build with MCP](https://www.youtube.com/playlist?list=PLMZM1DAlf0Lolxax4L2HS54Me8gn1gkz4)  
+- [Build AI Agents](https://www.youtube.com/playlist?list=PLMZM1DAlf0LqixhAG9BDk4O_FjqnaogK8)  
+- [AI Agents, MCP and more...](https://www.youtube.com/playlist?list=PL2ambAOfYA6-LDz0KpVKu9vJKAqhv0KKI)  
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.10 or higher
-- Git
-- pip (Python package manager) or uv
-
-### Installation Steps
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/Arindam200/awesome-ai-apps.git
-   ```
-
-2. **Navigate to the desired project directory**
-
-   ```bash
-   cd awesome-ai-apps/starter_ai_agents/agno_starter
-   ```
-
-3. **Install the required dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Follow project-specific instructions**
-   - Each project has its own README.md with detailed setup and usage instructions
-   - Make sure to read the project-specific documentation before running the application
+---
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Whether you're a beginner or an expert, your examples and tutorials can help others learn and grow. Here's how you can contribute:
+### English
+We welcome contributions from the **Eudemonia community**!  
+How to contribute:
+1. Add **German explanations** or notes for Micro-SaaS use cases.  
+2. Submit a Pull Request with your examples, tutorials, or automation notes.  
+3. Clearly mark which additions are **original Eudemonia content**.  
 
-1. Submit a Pull Request with your LLM application example
-2. Add detailed documentation and setup instructions
-3. Include requirements.txt or environment.yml
-4. Share your experience and best practices
+### Deutsch
+Beiträge aus der **Eudemonia-Community** sind willkommen!  
+So kannst du beitragen:
+1. Ergänze **deutsche Beschreibungen** oder Micro-SaaS-Ideen.  
+2. Reiche einen Pull Request mit deinen Beispielen, Tutorials oder Workflow-Notizen ein.  
+3. Markiere klar, welche Inhalte **neue Eudemonia-Erweiterungen** sind.  
+
+---
 
 ## 📜 License
 
-This repository is licensed under the [MIT License](./LICENSE). Feel free to use and modify the examples for your projects.
+This repository follows the original MIT License.  
 
-## Thank You for the Support! 🙏
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Arindam200/awesome-ai-apps&type=Date)](https://www.star-history.com/#Arindam200/awesome-ai-apps&Date)
+- Copyright © 2023 **Arindam Majumder**  
+- Copyright © 2025 **Eudemonia Automation**
